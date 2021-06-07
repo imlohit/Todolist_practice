@@ -10,9 +10,14 @@ while (askTodo !== 'quit') {
     } else if (askTodo === 'list') {
         console.log("**********");
         for(let i=0;i<todo.length;i++){
-            console.log(`${i+1}: ${todo[i]}`);
+            console.log(`${i}: ${todo[i]}`);
         }
         console.log("**********");
+    }
+    else if(askTodo==='delete'){
+        let index=parseInt(prompt("Enter index of todo to delete"));
+        todo.splice(index,1);
+        console.log(`Todo removed`);
     }
     askTodo = prompt("what would you like to do?").toLowerCase();
 }
